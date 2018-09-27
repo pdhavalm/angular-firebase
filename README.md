@@ -1,4 +1,5 @@
 # Angular6FirebaseCRUD
+See Demo: https://fire-db-166f6.firebaseapp.com/customers
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
