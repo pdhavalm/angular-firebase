@@ -3,11 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve --open 4200",
+    "test": "ng test --watch=false --code-coverage",
+    "clean": "rimraf ./dist/",
+    "build": "npm run clean && tsc",
+    "reinstall": "npm cache clean && npm install",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json",
+    "release": "npm run build && ng build --prod --build-optimizer --vendor-chunk --common-chunk",
+    "analyze": "npm run release -- --stats-json && webpack-bundle-analyzer ./dist/stats.json"
   },
   "private": true,
   "dependencies": {
